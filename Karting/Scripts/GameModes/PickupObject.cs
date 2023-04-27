@@ -6,6 +6,7 @@ using KartGame.KartSystems;
 /// </summary>
 public class PickupObject : TargetObject
 {
+    /*
     [SerializeField]
     private ArcadeKart kart;
 
@@ -49,7 +50,7 @@ public class PickupObject : TargetObject
             var vfx = Instantiate(spawnPrefabOnPickup, CollectVFXSpawnPoint.position, Quaternion.identity);
             Destroy(vfx, destroySpawnPrefabDelay);
         }
-        */
+
 
 
     //    Objective.OnUnregisterPickup(this);
@@ -78,4 +79,5 @@ public class PickupObject : TargetObject
             OnCollect();
         }
     }
+    */
 }

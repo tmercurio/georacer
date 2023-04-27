@@ -76,6 +76,9 @@ namespace KartGame.KartSystems
         public float AirPercent    { get; private set; }
         public float GroundPercent { get; private set; }
 
+        // Added constant used for collision with answer choice
+        public float length = 2f;
+
         public ArcadeKart.Stats baseStats = new ArcadeKart.Stats
         {
             TopSpeed            = 5f,
