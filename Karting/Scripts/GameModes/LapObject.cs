@@ -30,10 +30,14 @@ public class LapObject : TargetObject
         if (!((layerMask.value & 1 << other.gameObject.layer) > 0 && other.CompareTag("Player")))
             return;
 
-        Objective.OnUnregisterPickup?.Invoke(this);
-        if (finishLap)
-            gameFlow.gameOver = true;
+        Debug.Log(other.gameObject.name);
 
-        finishLap = true;
+        if (other.CompareTag("Player")) {
+            Objective.OnUnregisterPickup?.Invoke(this);
+            if (finishLap)
+                gameFlow.gameOver = true;
+
+            finishLap = true;
+        }
     }
 }

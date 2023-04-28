@@ -97,6 +97,8 @@ namespace KartGame.AI
         bool m_EndEpisode;
         float m_LastAccumulatedReward;
 
+        public GameFlowManager gameFlow;
+
         void Awake()
         {
             m_Kart = GetComponent<ArcadeKart>();
@@ -106,13 +108,25 @@ namespace KartGame.AI
         void Start()
         {
             // If the agent is training, then at the start of the simulation, pick a random checkpoint to train the agent.
-            OnEpisodeBegin();
-
-            if (Mode == AgentMode.Inferencing) m_CheckpointIndex = InitCheckpointIndex;
+            //OnEpisodeBegin();
+            gameFlow = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameFlowManager>();
+            //if (Mode == AgentMode.Inferencing) m_CheckpointIndex = InitCheckpointIndex;
         }
+
 
         void Update()
         {
+            if (gameFlow.curQuestion == 1) {
+                m_Acceleration = true;
+                m_Brake = false;
+                m_Steering = 0;
+            }
+            else {
+                m_Acceleration = true;
+                m_Brake = false;
+                m_Steering = 0;
+            }
+            /*
             if (m_EndEpisode)
             {
                 m_EndEpisode = false;
@@ -120,14 +134,16 @@ namespace KartGame.AI
                 EndEpisode();
                 OnEpisodeBegin();
             }
+            */
         }
 
+        /*
         void LateUpdate()
         {
             switch (Mode)
             {
                 case AgentMode.Inferencing:
-                    if (ShowRaycasts) 
+                    if (ShowRaycasts)
                         Debug.DrawRay(transform.position, Vector3.down * GroundCastDistance, Color.cyan);
 
                     // We want to place the agent back on the track if the agent happens to launch itself outside of the track.
@@ -140,13 +156,15 @@ namespace KartGame.AI
                         transform.position = checkpoint.position;
                         m_Kart.Rigidbody.velocity = default;
                         m_Steering = 0f;
-						m_Acceleration = m_Brake = false; 
+						m_Acceleration = m_Brake = false;
                     }
 
                     break;
             }
         }
+        */
 
+        /*
         void OnTriggerEnter(Collider other)
         {
             var maskedValue = 1 << other.gameObject.layer;
@@ -161,7 +179,9 @@ namespace KartGame.AI
                 m_CheckpointIndex = index;
             }
         }
+        */
 
+        /*
         void FindCheckpointIndex(Collider checkPoint, out int index)
         {
             for (int i = 0; i < Colliders.Length; i++)
@@ -174,13 +194,14 @@ namespace KartGame.AI
             }
             index = -1;
         }
+        */
 
         float Sign(float value)
         {
             if (value > 0)
             {
                 return 1;
-            } 
+            }
             if (value < 0)
             {
                 return -1;
@@ -188,6 +209,7 @@ namespace KartGame.AI
             return 0;
         }
 
+        /*
         public override void CollectObservations(VectorSensor sensor)
         {
             sensor.AddObservation(m_Kart.LocalSpeed());
@@ -216,7 +238,7 @@ namespace KartGame.AI
                 if (ShowRaycasts)
                 {
                     Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.RayDistance, Color.green);
-                    Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.HitValidationDistance, 
+                    Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.HitValidationDistance,
                         Color.red);
 
                     if (hit && hitInfo.distance < current.HitValidationDistance)
@@ -239,7 +261,9 @@ namespace KartGame.AI
 
             sensor.AddObservation(m_Acceleration);
         }
+        */
 
+        /*
         public override void OnActionReceived(ActionBuffers actions)
         {
             base.OnActionReceived(actions);
@@ -258,7 +282,9 @@ namespace KartGame.AI
             AddReward((m_Acceleration && !m_Brake ? 1.0f : 0.0f) * AccelerationReward);
             AddReward(m_Kart.LocalSpeed() * SpeedReward);
         }
+        */
 
+        /*
         public override void OnEpisodeBegin()
         {
             switch (Mode)
@@ -277,6 +303,7 @@ namespace KartGame.AI
                     break;
             }
         }
+        */
 
         void InterpretDiscreteActions(ActionBuffers actions)
         {
