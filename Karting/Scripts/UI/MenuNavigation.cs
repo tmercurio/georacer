@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class MenuNavigation : MonoBehaviour
 {
@@ -24,5 +27,15 @@ public class MenuNavigation : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(defaultSelection.gameObject);
             }
         }
+    }
+
+    public void level1Clicked() {
+        //MainManager.Instance.level = 1;
+        SceneManager.LoadSceneAsync("MainScene");
+    }
+
+    public void level2Clicked() {
+        //MainManager.Instance.level = 2;
+        SceneManager.LoadSceneAsync("MainScene");
     }
 }

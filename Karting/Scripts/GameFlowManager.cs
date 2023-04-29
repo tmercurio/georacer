@@ -6,7 +6,7 @@ using KartGame.KartSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public enum GameState{Play, Won, Lost}
+public enum GameState{Easy, Hard, Won, Lost}
 
 public class GameFlowManager : MonoBehaviour
 {
@@ -56,6 +56,9 @@ public class GameFlowManager : MonoBehaviour
     public int curQuestion = 1;
     public bool gameOver = false;
 
+    //public GameObject track;
+    //public GameObject menu;
+
     void Start()
     {
         if (autoFindKarts)
@@ -84,6 +87,8 @@ public class GameFlowManager : MonoBehaviour
         {
 			k.SetCanMove(false);
         }
+
+        //menu.SetActive(false);
 
         //run race countdown animation
         ShowRaceCountdownAnimation();
@@ -123,8 +128,9 @@ public class GameFlowManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(gameState);
 
-        if (gameState != GameState.Play)
+        if (gameState != GameState.Easy && gameState != GameState.Hard)
         {
             elapsedTimeBeforeEndScene += Time.deltaTime;
             if(elapsedTimeBeforeEndScene >= endSceneLoadDelay)
@@ -141,7 +147,7 @@ public class GameFlowManager : MonoBehaviour
                 if (Time.time >= m_TimeLoadEndGameScene)
                 {
                     SceneManager.LoadScene(m_SceneToLoad);
-                    gameState = GameState.Play;
+                    gameState = GameState.Easy;
                 }
             }
         }
@@ -163,11 +169,12 @@ public class GameFlowManager : MonoBehaviour
         // unlocks the cursor before leaving the scene, to be able to click buttons
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Debug.Log("The game is won");
 
         m_TimeManager.StopRace();
 
         // Remember that we need to load the appropriate end scene after a delay
-        gameState = win ? GameState.Won : GameState.Lost;
+        gameState = GameState.Won;
         endGameFadeCanvasGroup.gameObject.SetActive(true);
         if (win)
         {

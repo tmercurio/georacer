@@ -27,15 +27,17 @@ public class LapObject : TargetObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!((layerMask.value & 1 << other.gameObject.layer) > 0 && other.CompareTag("Player")))
-            return;
+        //if (!((layerMask.value & 1 << other.gameObject.layer) > 0 && other.CompareTag("Player")))
+        //    return;
 
         Debug.Log(other.gameObject.name);
+        Debug.Log(other.gameObject.tag);
 
         if (other.CompareTag("Player")) {
             Objective.OnUnregisterPickup?.Invoke(this);
-            if (finishLap)
+            if (finishLap) {
                 gameFlow.gameOver = true;
+            }
 
             finishLap = true;
         }
