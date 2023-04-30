@@ -23,6 +23,9 @@ public class DisplayMessage : MonoBehaviour
     public bool question;
     public int questionNum;
 
+    // Used for recurring messages like correct and incorrect
+    public bool recurring;
+
     private NotificationToast notification;
 
 

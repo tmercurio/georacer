@@ -5,8 +5,16 @@ using KartGame.KartSystems;
 
 public class AnswerChoice : MonoBehaviour
 {
-    [SerializeField]
-    private ArcadeKart kart;
+    //[SerializeField]
+    private ArcadeKart player_kart;
+
+    //[SerializeField]
+    private ArcadeKart AI_kart;
+
+    ArcadeKart[] karts = new ArcadeKart[2];
+
+    //karts[0] = player_kart;
+    //karts[1] = AI_kart;
 
     public float speedChange;
 
@@ -18,7 +26,7 @@ public class AnswerChoice : MonoBehaviour
     public bool choice;
     public DisplayMessage correctMessage;
     public DisplayMessage incorrectMessage;
-    public bool colliding = false;
+    bool[] colliding = {false, false};
 
     // Width of the answer choice you're driving through
     public float width = 3f;
@@ -26,6 +34,9 @@ public class AnswerChoice : MonoBehaviour
     // Buffers for collsion checking with kart and answer choice
     public float heightAboveBuffer = 3f;
     public float heightBelowBuffer = 2f;
+
+    // Keeps track of which turn in track we are on for collision detection
+    public int turn;
 
     public AudioClip CollectSound;
 
@@ -35,45 +46,113 @@ public class AnswerChoice : MonoBehaviour
         gameFlow = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameFlowManager>();
         correctMessage.gameObject.SetActive(false);
         incorrectMessage.gameObject.SetActive(false);
+        karts[0] = GameObject.FindGameObjectWithTag("Player").GetComponent<ArcadeKart>();
+        karts[1] = GameObject.FindGameObjectWithTag("AI").GetComponent<ArcadeKart>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Check for collision
-        if (((transform.position.x - width / 2) < kart.transform.position.x) &&
-                ((transform.position.x + width / 2) > kart.transform.position.x) &&
-                ((transform.position.y + heightAboveBuffer) > kart.transform.position.y) &&
-                ((transform.position.y - heightBelowBuffer) < kart.transform.position.y) &&
-                (transform.position.z < (kart.transform.position.z + kart.length / 2)) &&
-                (transform.position.z > (kart.transform.position.z - kart.length / 2))) {
-            if (!colliding) {
-                OnCollect();
-                colliding = true;
+        for (int i = 0; i < karts.Length; i++) {
+            // Checking collision on first turn of race
+            if (turn == 1) {
+                if (((transform.position.x - width / 2) < karts[i].transform.position.x) &&
+                        ((transform.position.x + width / 2) > karts[i].transform.position.x) &&
+                        ((transform.position.y + heightAboveBuffer) > karts[i].transform.position.y) &&
+                        ((transform.position.y - heightBelowBuffer) < karts[i].transform.position.y) &&
+                        (transform.position.z < (karts[i].transform.position.z + karts[i].length / 2)) &&
+                        (transform.position.z > (karts[i].transform.position.z - karts[i].length / 2))) {
+                    if (!colliding[i]) {
+                        bool isPlayer = (i == 0) ? true : false;
+                        OnCollect(karts[i], isPlayer);
+                        colliding[i] = true;
+                    }
+                }
+                else if (colliding[i])
+                    colliding[i] = false;
+            }
+
+            // Checking collision on second turn of race
+            else if (turn == 2) {
+                if (((transform.localPosition.x + 15) > (karts[i].transform.position.x - karts[i].length / 2)) &&
+                        ((transform.localPosition.x + 15) < (karts[i].transform.position.x + karts[i].length / 2)) &&
+                        //((transform.position.y + heightAboveBuffer) > karts[i].transform.position.y) &&
+                        //((transform.position.y - heightBelowBuffer) < karts[i].transform.position.y) &&
+                        ((transform.localPosition.z - 1.5) < karts[i].transform.position.z) &&
+                        ((transform.localPosition.z + 1.5) > karts[i].transform.position.z)) {
+                    if (!colliding[i]) {
+                        bool isPlayer = (i == 0) ? true : false;
+                        OnCollect(karts[i], isPlayer);
+                        colliding[i] = true;
+                    }
+                }
+                else if (colliding[i])
+                    colliding[i] = false;
+            }
+
+            else if (turn == 3) {
+                if (((transform.position.x + 2.5) > karts[i].transform.position.x) &&
+                        ((transform.position.x - 1.5) < karts[i].transform.position.x) &&
+                        ((correct && (transform.position.z > (karts[i].transform.position.z - karts[i].length / 2)) &&
+                        (transform.position.z < (karts[i].transform.position.z + karts[i].length / 2)))
+                        || (!correct && ((transform.position.z - 20) > (karts[i].transform.position.z - karts[i].length / 2)) &&
+                        ((transform.position.z - 20) < (karts[i].transform.position.z + karts[i].length / 2))))) {
+                    if (!colliding[i]) {
+                        bool isPlayer = (i == 0) ? true : false;
+                        OnCollect(karts[i], isPlayer);
+                        colliding[i] = true;
+                    }
+                }
+                else if (colliding[i])
+                    colliding[i] = false;
+            }
+
+            else if (turn == 4) {
+                if (((transform.position.x) > (karts[i].transform.position.x - karts[i].length / 2)) &&
+                        ((transform.position.x) < (karts[i].transform.position.x + karts[i].length / 2)) &&
+                        ((transform.position.z - 1.7) < karts[i].transform.position.z) &&
+                        ((transform.position.z + 1.7) > karts[i].transform.position.z)) {
+                    if (!colliding[i]) {
+                        Debug.Log(this.name);
+                        bool isPlayer = (i == 0) ? true : false;
+                        OnCollect(karts[i], isPlayer);
+                        colliding[i] = true;
+                    }
+                }
+                else if (colliding[i])
+                    colliding[i] = false;
             }
         }
-        else if (colliding)
-            colliding = false;
 
     }
 
-    void OnCollect()
+    void OnCollect(ArcadeKart kart, bool isPlayer)
     {
-        if (CollectSound)
-        {
-            AudioUtility.CreateSFX(CollectSound, transform.position, AudioUtility.AudioGroups.Pickup, 0f);
-        }
-
-        gameFlow.incQuestion();
 
         kart.changeKartSpeed(1 + speedChange);
 
-        Debug.Log("Choice: " + choice + "; Correct: " + correct);
-        if (choice) {
-            if (correct)
-                correctMessage.gameObject.SetActive(true);
-            else
-                incorrectMessage.gameObject.SetActive(true);
+        if (isPlayer) {
+            if (CollectSound)
+            {
+                AudioUtility.CreateSFX(CollectSound, transform.position, AudioUtility.AudioGroups.Pickup, 0f);
+            }
+
+            gameFlow.incQuestion();
+
+            if (choice) {
+                if (correct) {
+                    if (correctMessage.gameObject.activeSelf) {
+                        Debug.Log("Correct already active");
+                    }
+                    correctMessage.gameObject.SetActive(true);
+                    Debug.Log("Correct");
+                }
+                else {
+                    incorrectMessage.gameObject.SetActive(true);
+                    Debug.Log("Incorrect");
+                }
+            }
         }
     }
 }

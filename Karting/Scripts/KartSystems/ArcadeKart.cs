@@ -419,7 +419,8 @@ namespace KartGame.KartSystems
 
         public void changeKartSpeed(float scaleVal) {
             Rigidbody.velocity = Vector3.Scale(Rigidbody.velocity, new Vector3(scaleVal, scaleVal, scaleVal));
-            Debug.Log(Rigidbody.velocity);
+            //Debug.Log(Rigidbody.velocity);
+            Debug.Log(transform.position);
         }
 
         void MoveVehicle(bool accelerate, bool brake, float turnInput)

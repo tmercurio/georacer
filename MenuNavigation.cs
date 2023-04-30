@@ -30,12 +30,14 @@ public class MenuNavigation : MonoBehaviour
     }
 
     public void level1Clicked() {
-        //MainManager.Instance.level = 1;
+        if (MainManager.Instance != null)
+            MainManager.Instance.level = 1;
         SceneManager.LoadSceneAsync("MainScene");
     }
 
     public void level2Clicked() {
-        //MainManager.Instance.level = 2;
+        if (MainManager.Instance != null)
+            MainManager.Instance.level = 2;
         SceneManager.LoadSceneAsync("MainScene");
     }
 }

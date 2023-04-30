@@ -30,9 +30,6 @@ public class LapObject : TargetObject
         //if (!((layerMask.value & 1 << other.gameObject.layer) > 0 && other.CompareTag("Player")))
         //    return;
 
-        Debug.Log(other.gameObject.name);
-        Debug.Log(other.gameObject.tag);
-
         if (other.CompareTag("Player")) {
             Objective.OnUnregisterPickup?.Invoke(this);
             if (finishLap) {

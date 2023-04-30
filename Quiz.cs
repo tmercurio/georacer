@@ -20,14 +20,14 @@ public class Quiz : MonoBehaviour
     public TMP_Text question;
 
     Dictionary<int, string> a_options = new Dictionary<int, string> () {
-        {1, "Dublin"}, {2, "Spain"}, {3, "Mediterranean"}, {4, "Romania"}};
+        {1, "Dublin"}, {2, "Spain"}, {3, "Mediterranean"}, {4, "Hungary"}};
 
     Dictionary<int, string> b_options = new Dictionary<int, string> () {
-        {1, "Cork"}, {2, "France"}, {3, "Red"}, {4, "Hungary"}};
+        {1, "Cork"}, {2, "France"}, {3, "Red"}, {4, "Romania"}};
 
     Dictionary<int, string> questions = new Dictionary<int, string> () {
         {1, "What is the capital of Ireland?"}, {2, "Which of these countries borders Italy?"},
-        {3, "Which sea separates Europe and Africa?"}, {4, "Bucharest is the capital of which country?"}};
+        {3, "Which sea separates Europe and Africa?"}, {4, "Budapest is the capital of which country?"}};
 
     // Check if answer was correct when option A clicked
     public void checkAAnswer() {

@@ -7,7 +7,7 @@ public class NotificationToast : MonoBehaviour
     [Tooltip("Canvas used to fade in and out the content")]
     public CanvasGroup canvasGroup;
     [Tooltip("How long it will stay visible")]
-    public float visibleDuration;
+    public float visibleDuration = 3;
     [Tooltip("Duration of the fade in")]
     public float fadeInDuration = 0.5f;
     [Tooltip("Duration of the fade out")]

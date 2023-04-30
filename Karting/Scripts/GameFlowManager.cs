@@ -128,7 +128,6 @@ public class GameFlowManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(gameState);
 
         if (gameState != GameState.Easy && gameState != GameState.Hard)
         {
@@ -169,7 +168,6 @@ public class GameFlowManager : MonoBehaviour
         // unlocks the cursor before leaving the scene, to be able to click buttons
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Debug.Log("The game is won");
 
         m_TimeManager.StopRace();
 
