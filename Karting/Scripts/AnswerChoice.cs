@@ -114,7 +114,6 @@ public class AnswerChoice : MonoBehaviour
                         ((transform.position.z - 1.7) < karts[i].transform.position.z) &&
                         ((transform.position.z + 1.7) > karts[i].transform.position.z)) {
                     if (!colliding[i]) {
-                        Debug.Log(this.name);
                         bool isPlayer = (i == 0) ? true : false;
                         OnCollect(karts[i], isPlayer);
                         colliding[i] = true;
@@ -129,6 +128,10 @@ public class AnswerChoice : MonoBehaviour
 
     void OnCollect(ArcadeKart kart, bool isPlayer)
     {
+        if (correct)
+            speedChange = (float) 0.5;
+        else
+            speedChange = (float) -0.5;
 
         kart.changeKartSpeed(1 + speedChange);
 

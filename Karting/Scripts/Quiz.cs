@@ -31,15 +31,35 @@ public class Quiz : MonoBehaviour
     //l1Questions["b"] = new Dictionary<int, string> () {
     //    {1, "Cork"}, {2, "France"}, {3, "Red"}, {4, "Romania"}};
 
-    Dictionary<int, string> a_options = new Dictionary<int, string> () {
+    Dictionary<int, string> a1_options = new Dictionary<int, string> () {
         {1, "Dublin"}, {2, "Spain"}, {3, "Mediterranean"}, {4, "Hungary"}};
 
-    Dictionary<int, string> b_options = new Dictionary<int, string> () {
+    Dictionary<int, string> b1_options = new Dictionary<int, string> () {
         {1, "Cork"}, {2, "France"}, {3, "Red"}, {4, "Romania"}};
 
-    Dictionary<int, string> questions = new Dictionary<int, string> () {
+    Dictionary<int, string> questions1 = new Dictionary<int, string> () {
         {1, "What is the capital of Ireland?"}, {2, "Which of these countries borders Italy?"},
         {3, "Which sea separates Europe and Africa?"}, {4, "Budapest is the capital of which country?"}};
+
+
+    Dictionary<int, string> a2_options = new Dictionary<int, string> () {
+        {1, "Alberta"}, {2, "Kinshasa"}, {3, "Bolivia"}, {4, "Java"}};
+
+    Dictionary<int, string> b2_options = new Dictionary<int, string> () {
+        {1, "Ontario"}, {2, "Windhoek"}, {3, "Paraguay"}, {4, "Honshu"}};
+
+    Dictionary<int, string> questions2 = new Dictionary<int, string> () {
+        {1, "Which of these Canadian provinces is farther west?"}, {2, "What is the capital of Namibia?"},
+        {3, "Which country borders Peru?"}, {4, "What is the most populous island in the world?"}};
+
+
+    public void Start() {
+        if (MainManager.Instance.level == 2) {
+            option_a.text = a2_options[curQuestion];
+            option_b.text = b2_options[curQuestion];
+            question.text = questions2[curQuestion];
+        }
+    }
 
     // Check if answer was correct when option A clicked
     public void checkAAnswer() {
@@ -74,9 +94,17 @@ public class Quiz : MonoBehaviour
             endQuiz();
             return;
         }
-        option_a.text = a_options[curQuestion];
-        option_b.text = b_options[curQuestion];
-        question.text = questions[curQuestion];
+
+        if (MainManager.Instance.level == 1) {
+            option_a.text = a1_options[curQuestion];
+            option_b.text = b1_options[curQuestion];
+            question.text = questions1[curQuestion];
+        }
+        else {
+            option_a.text = a2_options[curQuestion];
+            option_b.text = b2_options[curQuestion];
+            question.text = questions2[curQuestion];
+        }
 
         //question.text = l1Questions["question"][curQuestion];
         //option_a.text = l1Questions["a"][curQuestion];

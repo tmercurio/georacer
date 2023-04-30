@@ -1233,7 +1233,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1416705500}
-        m_TargetAssemblyTypeName: Quiz, Assembly-CSharp
+        m_TargetAssemblyTypeName: Quiz, KartGame
         m_MethodName: checkAAnswer
         m_Mode: 1
         m_Arguments:
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1416705498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd59904306f8c46138b9d09989ba8094, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c880144084db459dab2809b65a653e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   curQuestion: 1

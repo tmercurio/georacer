@@ -139,21 +139,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6538505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 602294f0d2c3543c2b0c0fb9c0aedcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_kart: {fileID: 0}
-  AI_kart: {fileID: 0}
-  karts:
-  - {fileID: 0}
-  - {fileID: 0}
-  speedChange: 0.5
+  speedChange: 0
   gameFlow: {fileID: 0}
   correct: 1
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
-  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -454,8 +448,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1814,21 +1808,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 219594708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 602294f0d2c3543c2b0c0fb9c0aedcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_kart: {fileID: 0}
-  AI_kart: {fileID: 0}
-  karts:
-  - {fileID: 0}
-  - {fileID: 0}
-  speedChange: -0.5
+  speedChange: 0
   gameFlow: {fileID: 0}
   correct: 0
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
-  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -2364,7 +2352,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272793201}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 17.172775, y: 3.1566305, z: 38.76359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3640,7 +3628,7 @@ MonoBehaviour:
   gameFlow: {fileID: 0}
   message: What is the capital of Ireland?
   messagePrefab: {fileID: 11400000, guid: 4f09a4fe2b79f494cb4b65e27102ddd2, type: 2}
-  delayBeforeShowing: 4
+  delayBeforeShowing: 3
   autoDisplayOnAwake: 1
   question: 1
   questionNum: 1
@@ -6566,6 +6554,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
+      propertyPath: q1
+      value: 
+      objectReference: {fileID: 361168830}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q2
+      value: 
+      objectReference: {fileID: 492283970}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q3
+      value: 
+      objectReference: {fileID: 2068350482}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q4
+      value: 
+      objectReference: {fileID: 1839680098}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q1_a
+      value: 
+      objectReference: {fileID: 810078757}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q1_b
+      value: 
+      objectReference: {fileID: 1011437621}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q2_a
+      value: 
+      objectReference: {fileID: 38355258}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q2_b
+      value: 
+      objectReference: {fileID: 1513341993}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q3_a
+      value: 
+      objectReference: {fileID: 722148425}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q3_b
+      value: 
+      objectReference: {fileID: 966730683}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q4_a
+      value: 
+      objectReference: {fileID: 1383615457}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: q4_b
+      value: 
+      objectReference: {fileID: 780845348}
+    - target: {fileID: 1315839542190839936, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
       propertyPath: curQuestionText
       value: 
       objectReference: {fileID: 1440554733}
@@ -7552,21 +7600,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 756371993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 602294f0d2c3543c2b0c0fb9c0aedcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_kart: {fileID: 0}
-  AI_kart: {fileID: 0}
-  karts:
-  - {fileID: 0}
-  - {fileID: 0}
-  speedChange: -0.5
+  speedChange: 0
   gameFlow: {fileID: 0}
   correct: 0
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
-  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -8370,8 +8412,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9514,8 +9556,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10176,21 +10218,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1001727605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 602294f0d2c3543c2b0c0fb9c0aedcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_kart: {fileID: 0}
-  AI_kart: {fileID: 0}
-  karts:
-  - {fileID: 0}
-  - {fileID: 0}
-  speedChange: -0.5
+  speedChange: 0
   gameFlow: {fileID: 0}
   correct: 0
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
-  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -10359,8 +10395,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11467,21 +11503,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1128790335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 602294f0d2c3543c2b0c0fb9c0aedcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_kart: {fileID: 0}
-  AI_kart: {fileID: 0}
-  karts:
-  - {fileID: 0}
-  - {fileID: 0}
-  speedChange: -0.5
+  speedChange: 0
   gameFlow: {fileID: 0}
   correct: 0
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
-  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -14393,21 +14423,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1361722806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 602294f0d2c3543c2b0c0fb9c0aedcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_kart: {fileID: 0}
-  AI_kart: {fileID: 0}
-  karts:
-  - {fileID: 0}
-  - {fileID: 0}
-  speedChange: 0.5
+  speedChange: 0
   gameFlow: {fileID: 0}
   correct: 1
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
-  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -16364,8 +16388,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -17202,21 +17226,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1585193869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 602294f0d2c3543c2b0c0fb9c0aedcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_kart: {fileID: 0}
-  AI_kart: {fileID: 0}
-  karts:
-  - {fileID: 0}
-  - {fileID: 0}
-  speedChange: 0.5
+  speedChange: 0
   gameFlow: {fileID: 0}
   correct: 1
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
-  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -21679,21 +21697,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2092559032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 602294f0d2c3543c2b0c0fb9c0aedcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_kart: {fileID: 0}
-  AI_kart: {fileID: 0}
-  karts:
-  - {fileID: 0}
-  - {fileID: 0}
-  speedChange: 0.5
+  speedChange: 0
   gameFlow: {fileID: 0}
   correct: 1
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
-  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2

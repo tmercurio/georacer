@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 using KartGame.KartSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public enum GameState{Easy, Hard, Won, Lost}
 
@@ -40,6 +41,18 @@ public class GameFlowManager : MonoBehaviour
     public Text curQuestionText;
     public Text timeText;
 
+    public DisplayMessage q1;
+    public DisplayMessage q2;
+    public DisplayMessage q3;
+    public DisplayMessage q4;
+    public TMP_Text q1_a;
+    public TMP_Text q1_b;
+    public TMP_Text q2_a;
+    public TMP_Text q2_b;
+    public TMP_Text q3_a;
+    public TMP_Text q3_b;
+    public TMP_Text q4_a;
+    public TMP_Text q4_b;
 
     public GameState gameState { get; private set; }
 
@@ -58,10 +71,10 @@ public class GameFlowManager : MonoBehaviour
 
     // Questions and answer choices for hard level
     Dictionary<int, string> a_options = new Dictionary<int, string> () {
-        {1, "British Columbia"}, {2, "Kinshasa"}, {3, "Bolivia"}, {4, "Java"}};
+        {1, "Alberta"}, {2, "Kinshasa"}, {3, "Bolivia"}, {4, "Java"}};
 
     Dictionary<int, string> b_options = new Dictionary<int, string> () {
-        {1, "Alberta"}, {2, "Windhoek"}, {3, "Paraguay"}, {4, "Honshu"}};
+        {1, "Ontario"}, {2, "Windhoek"}, {3, "Paraguay"}, {4, "Honshu"}};
 
     Dictionary<int, string> questions = new Dictionary<int, string> () {
         {1, "Which of these Canadian provinces is farther west?"}, {2, "What is the capital of Namibia?"},
@@ -120,6 +133,19 @@ public class GameFlowManager : MonoBehaviour
 
     // Written by Thomas Mercurio--used for switching questions from first level to second level
     void setLevel2() {
+        q1.message = questions[1];
+        q2.message = questions[2];
+        q3.message = questions[3];
+        q4.message = questions[4];
+
+        q1_a.text = a_options[1];
+        q1_b.text = b_options[1];
+        q2_a.text = a_options[2];
+        q2_b.text = b_options[2];
+        q3_a.text = a_options[3];
+        q3_b.text = b_options[3];
+        q4_a.text = a_options[4];
+        q4_b.text = b_options[4];
     }
 
     void StartRace() {
