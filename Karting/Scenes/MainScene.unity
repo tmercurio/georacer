@@ -142,12 +142,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_kart: {fileID: 0}
+  AI_kart: {fileID: 0}
+  karts:
+  - {fileID: 0}
+  - {fileID: 0}
   speedChange: 0.5
   gameFlow: {fileID: 0}
   correct: 1
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
+  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -389,7 +395,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38355256}
   m_LocalRotation: {x: -0, y: -0.69572204, z: -0, w: 0.7183111}
-  m_LocalPosition: {x: 0, y: 0, z: 63.28}
+  m_LocalPosition: {x: 0, y: 0, z: 62.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -398,7 +404,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -88.17, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.15, y: 1.45}
+  m_AnchoredPosition: {x: -34.18, y: 1.48}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &38355258
@@ -455,7 +461,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1811,12 +1817,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_kart: {fileID: 0}
+  AI_kart: {fileID: 0}
+  karts:
+  - {fileID: 0}
+  - {fileID: 0}
   speedChange: -0.5
   gameFlow: {fileID: 0}
   correct: 0
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
+  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -7051,7 +7063,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722148423}
   m_LocalRotation: {x: -0, y: -0.99981767, z: -0, w: -0.019094078}
-  m_LocalPosition: {x: 0, y: 0, z: 1.35}
+  m_LocalPosition: {x: 0, y: 0, z: 1.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7060,7 +7072,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -182.188, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.6, y: 0.36}
+  m_AnchoredPosition: {x: -65.27, y: 0.36}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722148425
@@ -7117,7 +7129,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7543,12 +7555,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_kart: {fileID: 0}
+  AI_kart: {fileID: 0}
+  karts:
+  - {fileID: 0}
+  - {fileID: 0}
   speedChange: -0.5
   gameFlow: {fileID: 0}
   correct: 0
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
+  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -7665,7 +7683,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780845346}
   m_LocalRotation: {x: -0, y: 0.7353161, z: -0, w: 0.67772436}
-  m_LocalPosition: {x: 0, y: 0, z: -53.02}
+  m_LocalPosition: {x: 0, y: 0, z: -52.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7674,7 +7692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 94.668, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29.97, y: 0.63}
+  m_AnchoredPosition: {x: -29.92, y: 0.63}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &780845348
@@ -7733,7 +7751,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8359,7 +8377,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8388,7 +8406,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 14.939806, w: 2.8216996}
+  m_margin: {x: 0, y: 0, z: 16.123465, w: 2.8216996}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -8456,7 +8474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.709999, y: 0.6000004}
+  m_AnchoredPosition: {x: 7.4, y: 0.6}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &822690625
@@ -8820,12 +8838,12 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 2.8462525e-25
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -7.041751e-27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -9437,7 +9455,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966730681}
   m_LocalRotation: {x: -0, y: -0.9996279, z: -0, w: -0.027280634}
-  m_LocalPosition: {x: 0, y: 0, z: 1.19}
+  m_LocalPosition: {x: 0, y: 0, z: 1.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9446,7 +9464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -183.127, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70.49, y: 0.4}
+  m_AnchoredPosition: {x: -69.25, y: 0.45}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966730683
@@ -9503,7 +9521,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -10161,12 +10179,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_kart: {fileID: 0}
+  AI_kart: {fileID: 0}
+  karts:
+  - {fileID: 0}
+  - {fileID: 0}
   speedChange: -0.5
   gameFlow: {fileID: 0}
   correct: 0
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
+  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -10342,7 +10366,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -10439,7 +10463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.209999, y: 0.6600008}
+  m_AnchoredPosition: {x: 10.79, y: 0.63}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1011628028
@@ -11446,12 +11470,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_kart: {fileID: 0}
+  AI_kart: {fileID: 0}
+  karts:
+  - {fileID: 0}
+  - {fileID: 0}
   speedChange: -0.5
   gameFlow: {fileID: 0}
   correct: 0
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
+  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -12430,7 +12460,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: 0.09761158, y: 2.8462525e-25, z: -7.041751e-27, w: 0.9952246}
+  m_LocalRotation: {x: 0.09761158, y: -1e-45, z: 0, w: 0.9952246}
   m_LocalPosition: {x: 18.44, y: 3.25, z: -2.894476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14366,12 +14396,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_kart: {fileID: 0}
+  AI_kart: {fileID: 0}
+  karts:
+  - {fileID: 0}
+  - {fileID: 0}
   speedChange: 0.5
   gameFlow: {fileID: 0}
   correct: 1
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
+  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -14974,7 +15010,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383615455}
   m_LocalRotation: {x: -0, y: 0.6634554, z: -0, w: 0.7482159}
-  m_LocalPosition: {x: 0, y: 0, z: -48.14}
+  m_LocalPosition: {x: 0, y: 0, z: -47.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14983,7 +15019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 83.128, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.33, y: 0.69}
+  m_AnchoredPosition: {x: -28.39, y: 0.7}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383615457
@@ -15040,7 +15076,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -16269,7 +16305,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513341991}
   m_LocalRotation: {x: 0, y: -0.6957248, z: 0, w: 0.7183085}
-  m_LocalPosition: {x: 0, y: 0, z: 68.03}
+  m_LocalPosition: {x: 0, y: 0, z: 67.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16278,7 +16314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -88.17, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.07, y: 1.43}
+  m_AnchoredPosition: {x: -34.09, y: 1.43}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1513341993
@@ -16335,7 +16371,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -17169,12 +17205,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_kart: {fileID: 0}
+  AI_kart: {fileID: 0}
+  karts:
+  - {fileID: 0}
+  - {fileID: 0}
   speedChange: 0.5
   gameFlow: {fileID: 0}
   correct: 1
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
+  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2
@@ -21640,12 +21682,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b051db9ebde04da796b2c3450e33ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_kart: {fileID: 0}
+  AI_kart: {fileID: 0}
+  karts:
+  - {fileID: 0}
+  - {fileID: 0}
   speedChange: 0.5
   gameFlow: {fileID: 0}
   correct: 1
   choice: 1
   correctMessage: {fileID: 531531780}
   incorrectMessage: {fileID: 1166271432}
+  colliding: 
   width: 3
   heightAboveBuffer: 3
   heightBelowBuffer: 2

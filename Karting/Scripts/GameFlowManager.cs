@@ -56,6 +56,17 @@ public class GameFlowManager : MonoBehaviour
     public int curQuestion = 1;
     public bool gameOver = false;
 
+    // Questions and answer choices for hard level
+    Dictionary<int, string> a_options = new Dictionary<int, string> () {
+        {1, "British Columbia"}, {2, "Kinshasa"}, {3, "Bolivia"}, {4, "Java"}};
+
+    Dictionary<int, string> b_options = new Dictionary<int, string> () {
+        {1, "Alberta"}, {2, "Windhoek"}, {3, "Paraguay"}, {4, "Honshu"}};
+
+    Dictionary<int, string> questions = new Dictionary<int, string> () {
+        {1, "Which of these Canadian provinces is farther west?"}, {2, "What is the capital of Namibia?"},
+        {3, "Which country borders Peru?"}, {4, "What is the most populous island in the world?"}};
+
     //public GameObject track;
     //public GameObject menu;
 
@@ -88,6 +99,11 @@ public class GameFlowManager : MonoBehaviour
 			k.SetCanMove(false);
         }
 
+        if (MainManager.Instance.level == 2) {
+            gameState = GameState.Hard;
+            setLevel2();
+        }
+
         //menu.SetActive(false);
 
         //run race countdown animation
@@ -100,6 +116,10 @@ public class GameFlowManager : MonoBehaviour
     IEnumerator CountdownThenStartRaceRoutine() {
         yield return new WaitForSeconds(3f);
         StartRace();
+    }
+
+    // Written by Thomas Mercurio--used for switching questions from first level to second level
+    void setLevel2() {
     }
 
     void StartRace() {
@@ -152,6 +172,7 @@ public class GameFlowManager : MonoBehaviour
         }
         else
         {
+            // Written by Thomas Mercurio
             if (gameOver) EndGame(true);
             /*
             if (m_ObjectiveManager.AreAllObjectivesCompleted())
