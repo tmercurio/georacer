@@ -1,3 +1,5 @@
+// File completely written by Thomas Mercurio for driving through answer choices
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,7 +55,7 @@ public class AnswerChoice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check for collision
+        // Check for collision--physics written by Thomas Mercurio
         for (int i = 0; i < karts.Length; i++) {
             // Checking collision on first turn of race
             if (turn == 1) {
@@ -77,8 +79,6 @@ public class AnswerChoice : MonoBehaviour
             else if (turn == 2) {
                 if (((transform.localPosition.x + 15) > (karts[i].transform.position.x - karts[i].length / 2)) &&
                         ((transform.localPosition.x + 15) < (karts[i].transform.position.x + karts[i].length / 2)) &&
-                        //((transform.position.y + heightAboveBuffer) > karts[i].transform.position.y) &&
-                        //((transform.position.y - heightBelowBuffer) < karts[i].transform.position.y) &&
                         ((transform.localPosition.z - 1.5) < karts[i].transform.position.z) &&
                         ((transform.localPosition.z + 1.5) > karts[i].transform.position.z)) {
                     if (!colliding[i]) {
