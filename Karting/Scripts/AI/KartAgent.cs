@@ -4,6 +4,7 @@ using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System;
 
 namespace KartGame.AI
 {
@@ -99,6 +100,10 @@ namespace KartGame.AI
 
         public GameFlowManager gameFlow;
 
+        private ArcadeKart player_kart;
+
+        public Rigidbody Rigidbody;
+
         void Awake()
         {
             m_Kart = GetComponent<ArcadeKart>();
@@ -110,19 +115,43 @@ namespace KartGame.AI
             // If the agent is training, then at the start of the simulation, pick a random checkpoint to train the agent.
             //OnEpisodeBegin();
             gameFlow = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameFlowManager>();
+            player_kart = GameObject.FindGameObjectWithTag("Player").GetComponent<ArcadeKart>();
             //if (Mode == AgentMode.Inferencing) m_CheckpointIndex = InitCheckpointIndex;
         }
 
-
+        // Written by Thomas Mercurio, coding actions of AIKart
         void Update()
         {
-            if (gameFlow.curQuestion == 1) {
-                m_Acceleration = true;
-                m_Brake = false;
-                m_Steering = 0;
+            // Check if kart is within sight of the player and if it should speed up
+            if (Math.Sqrt(Math.Pow((transform.position.x - player_kart.transform.position.x), 2) +
+                Math.Pow((transform.position.z - player_kart.transform.position.z), 2)) < 20) {
+                    m_Acceleration = true;
+                    m_Brake = false;
+                    if ((transform.position.x > 5 && transform.position.z > 40) ||
+                        (transform.position.x < -21 && transform.position.z > 50) ||
+                        (transform.position.x < -30 && transform.position.z < -23) ||
+                        (transform.position.x > 0 && transform.position.z < -27)) {
+                        if (Rigidbody.velocity.magnitude > 5)
+                            m_Steering = -0.8f;
+                        else
+                            m_Steering = -0.2f;
+                    }
+                    else if ((transform.position.x < 0 && transform.position.x > -20 && transform.position.z > 60) ||
+                        (transform.position.z < 50 && transform.position.z > 2 && transform.position.x < -43) ||
+                        (transform.position.x > -30 && transform.position.x < -15 && transform.position.z < -42)) {
+                        m_Steering = -0.2f;
+                    }
+                    else if ((transform.position.x < 0 && transform.position.x > -20 && transform.position.z < 58.5) ||
+                        (transform.position.z < 50 && transform.position.z > 2 && transform.position.x > -41.5 && transform.position.x < -38) ||
+                        (transform.position.x > -30 && transform.position.x < -15 && transform.position.z > -38 && transform.position.z < -36)) {
+                        m_Steering = 0.3f;
+                    }
+                    else {
+                        m_Steering = 0;
+                    }
             }
             else {
-                m_Acceleration = true;
+                m_Acceleration = false;
                 m_Brake = false;
                 m_Steering = 0;
             }
