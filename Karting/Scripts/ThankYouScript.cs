@@ -1,3 +1,5 @@
+// Completely written by Thomas Mercurio and displays thank you message at end of game
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

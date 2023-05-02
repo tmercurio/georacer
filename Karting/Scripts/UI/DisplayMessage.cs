@@ -1,4 +1,6 @@
-﻿using System.Collections;
+// File taken from kart game Unity tutorial and edited by Thomas Mercurio to display geography questions
+
+using System.Collections;
 using UnityEngine;
 
 public class DisplayMessage : MonoBehaviour

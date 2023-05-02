@@ -1,4 +1,4 @@
-// Completely written by Thomas Mercurio
+// Completely written by Thomas Mercurio for the quiz at the end of the game
 
 using System.Collections;
 using System.Collections.Generic;
@@ -18,18 +18,6 @@ public class Quiz : MonoBehaviour
     public TMP_Text option_a;
     public TMP_Text option_b;
     public TMP_Text question;
-
-    //Dictionary<string, Dictionary<int, string>> l1Questions = new Dictionary<string, Dictionary<int, string>> ();
-
-    //l1Questions["question"] = new Dictionary<int, string> () {
-    //    {1, "What is the capital of Ireland?"}, {2, "Which of these countries borders Italy?"},
-    //    {3, "Which sea separates Europe and Africa?"}, {4, "Budapest is the capital of which country?"}};
-
-    //l1Questions["a"] = new Dictionary<int, string> () {
-    //    {1, "Dublin"}, {2, "Spain"}, {3, "Mediterranean"}, {4, "Hungary"}};
-
-    //l1Questions["b"] = new Dictionary<int, string> () {
-    //    {1, "Cork"}, {2, "France"}, {3, "Red"}, {4, "Romania"}};
 
     Dictionary<int, string> a1_options = new Dictionary<int, string> () {
         {1, "Dublin"}, {2, "Spain"}, {3, "Mediterranean"}, {4, "Hungary"}};

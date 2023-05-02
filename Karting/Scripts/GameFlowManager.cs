@@ -1,3 +1,6 @@
+// File taken from kart game Unity tutorial and edited by Thomas Mercurio
+// to keep track of game globals like question number and display the right text
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -69,6 +72,8 @@ public class GameFlowManager : MonoBehaviour
     public int curQuestion = 1;
     public bool gameOver = false;
 
+    public GameObject joystick;
+
     // Questions and answer choices for hard level
     Dictionary<int, string> a_options = new Dictionary<int, string> () {
         {1, "Alberta"}, {2, "Kinshasa"}, {3, "Bolivia"}, {4, "Java"}};
@@ -80,11 +85,10 @@ public class GameFlowManager : MonoBehaviour
         {1, "Which of these Canadian provinces is farther west?"}, {2, "What is the capital of Namibia?"},
         {3, "Which country borders Peru?"}, {4, "What is the most populous island in the world?"}};
 
-    //public GameObject track;
-    //public GameObject menu;
-
     void Start()
     {
+        joystick.SetActive(false);
+
         if (autoFindKarts)
         {
             karts = FindObjectsOfType<ArcadeKart>();
@@ -112,12 +116,11 @@ public class GameFlowManager : MonoBehaviour
 			k.SetCanMove(false);
         }
 
+        // If the second level was clicked, set questions to level 2
         if (MainManager.Instance.level == 2) {
             gameState = GameState.Hard;
             setLevel2();
         }
-
-        //menu.SetActive(false);
 
         //run race countdown animation
         ShowRaceCountdownAnimation();
@@ -200,13 +203,6 @@ public class GameFlowManager : MonoBehaviour
         {
             // Written by Thomas Mercurio
             if (gameOver) EndGame(true);
-            /*
-            if (m_ObjectiveManager.AreAllObjectivesCompleted())
-                EndGame(true);
-
-            if (m_TimeManager.IsFinite && m_TimeManager.IsOver)
-                EndGame(false);
-            */
         }
     }
 
@@ -248,9 +244,14 @@ public class GameFlowManager : MonoBehaviour
         }
     }
 
+    // Function to increment the current question we are on and display that on the screen
     [ContextMenu("Increment Question")]
     public void incQuestion() {
         curQuestion++;
-        curQuestionText.text = "Question " + curQuestion.ToString();
+
+        if (curQuestion <= 4)
+            curQuestionText.text = "Question " + curQuestion.ToString();
+        else
+            curQuestionText.text = "Race to the finish!";
     }
 }

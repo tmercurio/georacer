@@ -7,16 +7,11 @@ using KartGame.KartSystems;
 
 public class AnswerChoice : MonoBehaviour
 {
-    //[SerializeField]
     private ArcadeKart player_kart;
 
-    //[SerializeField]
     private ArcadeKart AI_kart;
 
     ArcadeKart[] karts = new ArcadeKart[2];
-
-    //karts[0] = player_kart;
-    //karts[1] = AI_kart;
 
     public float speedChange;
 
@@ -91,6 +86,7 @@ public class AnswerChoice : MonoBehaviour
                     colliding[i] = false;
             }
 
+            // Checking collision on third turn of the race
             else if (turn == 3) {
                 if (((transform.position.x + 2.5) > karts[i].transform.position.x) &&
                         ((transform.position.x - 1.5) < karts[i].transform.position.x) &&
@@ -108,6 +104,7 @@ public class AnswerChoice : MonoBehaviour
                     colliding[i] = false;
             }
 
+            // Checking collision on fourth turn of the race
             else if (turn == 4) {
                 if (((transform.position.x) > (karts[i].transform.position.x - karts[i].length / 2)) &&
                         ((transform.position.x) < (karts[i].transform.position.x + karts[i].length / 2)) &&
@@ -133,6 +130,7 @@ public class AnswerChoice : MonoBehaviour
         else
             speedChange = (float) -0.5;
 
+        // Kart speeds up or slows down based on if the answer is correct or not
         kart.changeKartSpeed(1 + speedChange);
 
         if (isPlayer) {
@@ -145,15 +143,10 @@ public class AnswerChoice : MonoBehaviour
 
             if (choice) {
                 if (correct) {
-                    if (correctMessage.gameObject.activeSelf) {
-                        Debug.Log("Correct already active");
-                    }
                     correctMessage.gameObject.SetActive(true);
-                    Debug.Log("Correct");
                 }
                 else {
                     incorrectMessage.gameObject.SetActive(true);
-                    Debug.Log("Incorrect");
                 }
             }
         }

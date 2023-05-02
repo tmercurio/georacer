@@ -1,4 +1,7 @@
-﻿using System;
+// File taken from kart game Unity tutorial and edited by Thomas Mercurio to
+// allow for slowing down/speeding up of kart through answer choices
+
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.VFX;
@@ -416,11 +419,9 @@ namespace KartGame.KartSystems
             }
         }
 
-
+        // Added function to speed up or slow down kart as it goes through answer choices
         public void changeKartSpeed(float scaleVal) {
             Rigidbody.velocity = Vector3.Scale(Rigidbody.velocity, new Vector3(scaleVal, scaleVal, scaleVal));
-            //Debug.Log(Rigidbody.velocity);
-            Debug.Log(transform.position);
         }
 
         void MoveVehicle(bool accelerate, bool brake, float turnInput)

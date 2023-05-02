@@ -1,4 +1,6 @@
-﻿﻿using System;
+// File taken from kart game Unity tutorial and edited by Thomas Mercurio to count up time
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,7 +40,7 @@ public class TimeManager : MonoBehaviour
     }
 
 
-
+    // Edited to count up instead of down
     private void AdjustTime(float delta)
     {
         TimeRemaining += delta;

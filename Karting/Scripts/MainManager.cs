@@ -1,4 +1,5 @@
-// Code inspired by looking at https://learn.unity.com/tutorial/implement-data-persistence-between-scenes#634f8281edbc2a65c86270c7
+// Code inspired by looking at https://learn.unity.com/tutorial/implement-data-persistence-between-scenes
+// and used to keep track of variables across scenes
 
 using System.Collections;
 using System.Collections.Generic;

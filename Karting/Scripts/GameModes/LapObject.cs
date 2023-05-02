@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+// File taken from kart game Unity tutorial and edited by Thomas Mercurio
+
+using UnityEngine;
 
 /// <summary>
 /// This class inherits from TargetObject and represents a LapObject.
@@ -27,9 +29,7 @@ public class LapObject : TargetObject
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (!((layerMask.value & 1 << other.gameObject.layer) > 0 && other.CompareTag("Player")))
-        //    return;
-
+        // First time through, set finishLap to true; second time through, set gameOver to true
         if (other.CompareTag("Player")) {
             Objective.OnUnregisterPickup?.Invoke(this);
             if (finishLap) {

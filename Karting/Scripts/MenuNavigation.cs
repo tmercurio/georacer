@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+// File taken from kart game Unity tutorial and edited by Thomas Mercurio to
+// allow the user to choose their level
+
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
